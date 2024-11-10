@@ -3,13 +3,18 @@ import Hand from "./Hand";
 
 function Box({ hand, yourHand, bet, hist, className = "", onChange }) {
   const classNames = `Box ${className}`;
+  const compare = hist[hist.length - 1];
+  let [meClassName, yourClassName] = ["", ""];
+  if (compare === "승리") meClassName = "winner";
+  else if (compare === "패배") yourClassName = "winner";
+
   return (
     <div className={classNames}>
       <div className="Box-inner">
         <div className="App-hands">
-          <Hand className="" name={hand} />
+          <Hand className={meClassName} value={hand} />
           <div className="App-versus">VS</div>
-          <Hand className="" name={yourHand} />
+          <Hand className={yourClassName} value={yourHand} />
         </div>
       </div>
       <div className="App-bet">
@@ -26,7 +31,7 @@ function Box({ hand, yourHand, bet, hist, className = "", onChange }) {
       </div>
       <div className="App-history">
         <h2>승부기록</h2>
-        <p>{hist || hist.join(",")}</p>
+        <p>{hist.join(",")}</p>
       </div>
     </div>
   );

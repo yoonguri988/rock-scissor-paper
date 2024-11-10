@@ -2,12 +2,9 @@ import { useState } from "react";
 import "./App.css";
 import resetSrc from "./assets/ic-reset.svg";
 import Score from "./Score";
-import Button from "./Button";
+import HandButton from "./HandButton";
 import Box from "./Box";
 import { compareHand, generateRandomHand } from "./utils";
-import rockImg from "./assets/rock.svg";
-import scissorImg from "./assets/scissor.svg";
-import paperImg from "./assets/paper.svg";
 
 const INITIAL_VALUE = "rock";
 
@@ -59,9 +56,12 @@ function App() {
   return (
     <div className="App">
       <h1 className="App-heading">가위바위보</h1>
-      <Button onClick={handleClearClick}>
-        <img className="App-reset" src={resetSrc} alt="초기화" />
-      </Button>
+      <img
+        className="App-reset"
+        src={resetSrc}
+        alt="초기화"
+        onClick={handleClearClick}
+      />
       <div className="App-scores">
         <Score num={myScore} name="나" />
         <div className="App-versus">:</div>
@@ -75,9 +75,9 @@ function App() {
         onChange={handleBetChange}
         bet={bet}
       />
-      <Button value="rock" onClick={handleButtonClick} />
-      <Button value="scissor" onClick={handleButtonClick} />
-      <Button value="paper" onClick={handleButtonClick} />
+      <HandButton value="rock" onClick={handleButtonClick} />
+      <HandButton value="scissor" onClick={handleButtonClick} />
+      <HandButton value="paper" onClick={handleButtonClick} />
     </div>
   );
 }
