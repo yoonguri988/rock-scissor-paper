@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import resetSrc from "./assets/ic-reset.svg";
 import Score from "./Score";
+import Button from "./Button";
 
 function App() {
   const [myNum, setMyNum] = useState(0);
@@ -15,10 +16,10 @@ function App() {
         <div class="App-versus">:</div>
         <Score num={yourNum} name="상대" />
       </div>
-      {/* <Box />
-      <Button />
-      <Button />
-      <Button /> */}
+      {/* <Box /> */}
+      <Button name="rock" />
+      <Button name="scissor" />
+      <Button name="paper" />
     </div>
   );
 }
