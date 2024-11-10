@@ -1,4 +1,5 @@
 import "./Box.css";
+import Hand from "./Hand";
 
 function Box({ className = "" }) {
   const classNames = `Box ${className}`;
@@ -6,9 +7,9 @@ function Box({ className = "" }) {
     <div className={className}>
       <div class="Box-inner">
         <div class="App-hands">
-          {/* <Hand /> */}
+          <Hand className="" name="rock" />
           <div class="App-versus">VS</div>
-          {/* <Hand /> */}
+          <Hand className="winner" name="paper" />
         </div>
       </div>
       <div class="App-bet">
