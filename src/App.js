@@ -3,6 +3,7 @@ import "./App.css";
 import resetSrc from "./assets/ic-reset.svg";
 import Score from "./Score";
 import Button from "./Button";
+import Box from "./Box";
 
 function App() {
   const [myNum, setMyNum] = useState(0);
@@ -16,7 +17,7 @@ function App() {
         <div class="App-versus">:</div>
         <Score num={yourNum} name="상대" />
       </div>
-      {/* <Box /> */}
+      <Box className="App-box" />
       <Button name="rock" />
       <Button name="scissor" />
       <Button name="paper" />
