@@ -12,8 +12,8 @@ function Hand({ name, className = "" }) {
   const classNames = `Hand ${className}`;
   const src = ROCK_SCISSOR_PAPER[name];
   return (
-    <div class={classNames}>
-      <img class="Hand-icon" src={src} alt={name} />
+    <div className={classNames}>
+      <img className="Hand-icon" src={src} alt={name} />
     </div>
   );
 }
